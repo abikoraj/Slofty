@@ -1,0 +1,12 @@
+@extends('layouts.app')
+@section('content')
+    @include('slider.app')
+    @include('about.app')
+    @include('portfolio.app')
+    @include('team.app')
+    @include('startup.app')
+    @include('ourservice.app')
+    @include('testimonial.app')
+    @include('blog.app')
+    @include('contact.app')
+@endsection
