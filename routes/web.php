@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserAuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
+});
+
+// Route::view('/login', 'login');
+Route::match(['GET', 'POST'], 'admin/login', [UserAuthController::class, 'login'])->name('login');
+
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('admin')->group(function () {
+        Route::view('dashboard', 'dashboard')->name('dashboard');
+        Route::get('logout', [UserAuthController::class, 'logout'])->name('logout');
+    });
 });
