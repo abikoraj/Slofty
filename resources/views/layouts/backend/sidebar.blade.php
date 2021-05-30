@@ -47,6 +47,8 @@
                     <li><a href="{{ route('privacy.policy.show') }}">Privacy Policy</a></li>
                 </ul>
             </li> --}}
+            <li><a href="{{ route('team.add') }}"><i class="zmdi zmdi-accounts-alt"></i><span>Teams</span></a>
+            </li>
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-copy"></i><span>Pages</span></a>
                 <ul class="ml-menu">
                     {{-- <li><a href="{{ route('faq.add') }}">FAQ</a></li>

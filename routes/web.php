@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserAuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,9 +22,16 @@ Route::get('/', function () {
 // Route::view('/login', 'login');
 Route::match(['GET', 'POST'], 'admin/login', [UserAuthController::class, 'login'])->name('login');
 
-Route::middleware(['auth'])->group(function () {
-    Route::prefix('admin')->group(function () {
-        Route::view('dashboard', 'dashboard')->name('dashboard');
-        Route::get('logout', [UserAuthController::class, 'logout'])->name('logout');
+// Route::middleware(['auth'])->group(function () {
+Route::prefix('admin')->group(function () {
+    Route::view('dashboard', 'dashboard')->name('dashboard');
+    Route::get('logout', [UserAuthController::class, 'logout'])->name('logout');
+
+    Route::prefix('teams')->group(function () {
+        Route::get('/', [TeamController::class, 'add'])->name('team.add');
+        Route::post('/submit', [TeamController::class, 'submit'])->name('team.submit');
+        Route::match(['get', 'post'], '/edit/{team}', [TeamController::class, 'edit'])->name('team.edit');
+        Route::get('/delete/{team}', [TeamController::class, 'delete'])->name('team.delete');
     });
 });
+// });
