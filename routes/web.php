@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CounterController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserAuthController;
@@ -38,6 +39,11 @@ Route::prefix('admin')->group(function () {
     Route::prefix('counter')->group(function () {
         Route::get('/', [CounterController::class, 'edit'])->name('counter.edit');
         Route::post('/update/{counter}', [CounterController::class, 'update'])->name('counter.update');
+    });
+
+    Route::prefix('about')->group(function () {
+        Route::get('/', [AboutController::class, 'edit'])->name('about.edit');
+        Route::post('/update/{about}', [AboutController::class, 'update'])->name('about.update');
     });
 });
 // });
