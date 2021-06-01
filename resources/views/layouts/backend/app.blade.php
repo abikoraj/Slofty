@@ -8,7 +8,8 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
     <title>Admin Panel</title>
-    <link rel="icon" href="{{ asset('assets/Aero/images/wd.png') }}" type="image/x-icon"> <!-- Favicon-->
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('assets/agency-studio/img/favicon.ico') }}">
     <link rel="stylesheet" href="{{ asset('assets/Aero/plugins/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/Aero/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/Aero/plugins/charts-c3/plugin.css') }}" />

@@ -2,8 +2,9 @@
 <aside id="leftsidebar" class="sidebar">
     <div class="navbar-brand">
         <button class="btn-menu ls-toggle-btn" type="button"><i class="zmdi zmdi-menu"></i></button>
-        <a href="index.html"><img src="{{ asset('assets/Aero/images/logo.svg') }}" width="25" alt="WD"><span
-                class="m-l-10">Admin</span></a>
+        <a href="index.html"><img src="{{ asset('assets/agency-studio/img/logo-dark.png') }}" width="" alt="WD">
+            {{-- <span class="m-l-10">Admin</span> --}}
+        </a>
     </div>
     <div class="menu">
         <ul class="list">
@@ -47,6 +48,7 @@
                     <li><a href="{{ route('privacy.policy.show') }}">Privacy Policy</a></li>
                 </ul>
             </li> --}}
+            <li><a href="{{ route('counter.edit') }}"><i class="zmdi zmdi-incandescent"></i><span>Counter</span></a>
             <li><a href="{{ route('team.add') }}"><i class="zmdi zmdi-accounts-alt"></i><span>Teams</span></a>
             </li>
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-copy"></i><span>Pages</span></a>

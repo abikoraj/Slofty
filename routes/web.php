@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CounterController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserAuthController;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,11 @@ Route::prefix('admin')->group(function () {
         Route::post('/submit', [TeamController::class, 'submit'])->name('team.submit');
         Route::match(['get', 'post'], '/edit/{team}', [TeamController::class, 'edit'])->name('team.edit');
         Route::get('/delete/{team}', [TeamController::class, 'delete'])->name('team.delete');
+    });
+
+    Route::prefix('counter')->group(function () {
+        Route::get('/', [CounterController::class, 'edit'])->name('counter.edit');
+        Route::post('/update/{counter}', [CounterController::class, 'update'])->name('counter.update');
     });
 });
 // });

@@ -30,7 +30,8 @@
                             </div>
                         @endif
                         <div class="header">
-                            <img class="logo" src="{{ asset('assets/Aero/images/logo.svg') }}" alt="">
+                            <img class="logo" src="{{ asset('assets/agency-studio/img/logo-dark.png') }}" alt=""
+                                style="width: 65%">
                             <h5>Log in</h5>
                         </div>
                         <div class="body">
