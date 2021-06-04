@@ -2,7 +2,7 @@
 <aside id="leftsidebar" class="sidebar">
     <div class="navbar-brand">
         <button class="btn-menu ls-toggle-btn" type="button"><i class="zmdi zmdi-menu"></i></button>
-        <a href="index.html"><img src="{{ asset('assets/agency-studio/img/logo-dark.png') }}" width="" alt="WD">
+        <a href="{{ route('home') }}"><img src="{{ asset('assets/agency-studio/img/logo-dark.png') }}" width="" alt="WD">
             {{-- <span class="m-l-10">Admin</span> --}}
         </a>
     </div>

@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CounterController;
+use App\Http\Controllers\SkillController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\UserAuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('home');
 
 // Route::view('/login', 'login');
 Route::match(['GET', 'POST'], 'admin/login', [UserAuthController::class, 'login'])->name('login');
@@ -44,6 +46,18 @@ Route::prefix('admin')->group(function () {
     Route::prefix('about')->group(function () {
         Route::get('/', [AboutController::class, 'edit'])->name('about.edit');
         Route::post('/update/{about}', [AboutController::class, 'update'])->name('about.update');
+    });
+
+    Route::prefix('skills')->group(function () {
+        Route::get('/', [SkillController::class, 'edit'])->name('skills.edit');
+        Route::post('/update/{skill}', [SkillController::class, 'update'])->name('skills.update');
+    });
+
+    Route::prefix('testimonials')->group(function () {
+        Route::get('/', [TestimonialController::class, 'add'])->name('testimonials.add');
+        Route::post('/submit', [TestimonialController::class, 'submit'])->name('testimonials.submit');
+        Route::match(['get', 'post'], '/edit/{testimonial}', [TestimonialController::class, 'edit'])->name('testimonials.edit');
+        Route::get('/delete/{testimonial}', [TestimonialController::class, 'delete'])->name('testimonials.delete');
     });
 });
 // });

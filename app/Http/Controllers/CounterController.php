@@ -33,6 +33,8 @@ class CounterController extends Controller
         $counter->icon4 = $request->icon4;
         $counter->count4 = $request->count4;
 
-        dd($counter);
+        // dd($counter);
+        $counter->save();
+        return redirect()->back()->with('message', 'Counter Updated Successfully!');
     }
 }
