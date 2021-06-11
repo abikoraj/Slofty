@@ -2,7 +2,8 @@
 <aside id="leftsidebar" class="sidebar">
     <div class="navbar-brand">
         <button class="btn-menu ls-toggle-btn" type="button"><i class="zmdi zmdi-menu"></i></button>
-        <a href="{{ route('home') }}"><img src="{{ asset('assets/agency-studio/img/logo-dark.png') }}" width="" alt="WD">
+        <a href="{{ route('home') }}"><img src="{{ asset('assets/agency-studio/img/logo-dark.png') }}" width=""
+                alt="WD">
             {{-- <span class="m-l-10">Admin</span> --}}
         </a>
     </div>
@@ -48,14 +49,24 @@
                     <li><a href="{{ route('privacy.policy.show') }}">Privacy Policy</a></li>
                 </ul>
             </li> --}}
-            <li><a href="{{ route('counter.edit') }}"><i class="zmdi zmdi-incandescent"></i><span>Counter</span></a>
+            {{-- <li><a href="{{ route('profile.edit') }}"><i class="zmdi zmdi-settings"></i><span>Profile
+                        Setting</span></a>
+            </li> --}}
+            <li><a href="{{ route('about.edit') }}"><i class="zmdi zmdi-nature-people"></i><span>About</span></a>
+            </li>
+            <li><a href="{{ route('skills.edit') }}"><i class="zmdi zmdi-puzzle-piece"></i><span>Skills</span></a>
+            </li>
+            <li><a href="{{ route('counter.edit') }}"><i class="zmdi zmdi-exposure-alt"></i><span>Counter</span></a>
+            </li>
             <li><a href="{{ route('team.add') }}"><i class="zmdi zmdi-accounts-alt"></i><span>Teams</span></a>
             </li>
-            <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-copy"></i><span>Pages</span></a>
-                <ul class="ml-menu">
-                    {{-- <li><a href="{{ route('faq.add') }}">FAQ</a></li>
-                    <li><a href="{{ route('privacy.policy.show') }}">Privacy Policy</a></li> --}}
-                </ul>
+            <li><a href="{{ route('portfolio.add') }}"><i
+                        class="zmdi zmdi-collection-folder-image"></i><span>Portfolio</span></a>
+            </li>
+            <li><a href="{{ route('blog.add') }}"><i class="zmdi zmdi-blogger"></i><span>Blogs</span></a>
+            </li>
+            <li><a href="{{ route('testimonials.add') }}"><i
+                        class="zmdi zmdi-comments"></i><span>Testimonials</span></a>
             </li>
             <li class="open"><a href="{{ route('logout') }}"><i class="zmdi zmdi-power"></i><span>Logout</span></a>
             </li>

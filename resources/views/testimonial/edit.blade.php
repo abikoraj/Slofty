@@ -9,9 +9,12 @@
                     <div class="col-lg-7 col-md-6 col-sm-12">
                         <h2>Testimonial</h2>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Dashboard</a>
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="zmdi zmdi-home"></i>
+                                    Dashboard</a>
                             </li>
-                            <li class="breadcrumb-item active">Testimonial</li>
+                            <li class="breadcrumb-item active"><a href="{{ route('testimonials.add') }}">Testimonial</a>
+                            </li>
+                            <li class="breadcrumb-item active">Edit</li>
                         </ul>
                         <button class="btn btn-primary btn-icon mobile_menu" type="button"><i
                                 class="zmdi zmdi-sort-amount-desc"></i></button>
@@ -28,7 +31,7 @@
                     <div class=" col-md-12 justify-content-center">
                         <div class="card">
                             <div class="header">
-                                <h2>Add<strong> Testimonial</strong></h2>
+                                <h2>Edit<strong> Testimonial</strong></h2>
                             </div>
                             <form action="{{ route('testimonials.edit', ['testimonial' => $item->id]) }}" method="POST">
                                 @csrf

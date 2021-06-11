@@ -26,6 +26,10 @@
     <link rel="stylesheet" href="{{ asset('assets/Aero/plugins/select2/select2.css') }}" />
 
     <link rel="stylesheet" href="{{ asset('assets/Aero/plugins/dropify/css/dropify.min.css') }}">
+
+    <!-- Light Gallery Plugin Css -->
+    <link rel="stylesheet" href="{{ asset('assets/Aero/plugins/light-gallery/css/lightgallery.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/Aero/plugins/fullcalendar/fullcalendar.min.css') }}">
 </head>
 
 <body class="theme-blush">
@@ -53,6 +57,15 @@
     <script src="{{ asset('assets/Aero/bundles/libscripts.bundle.js') }}"></script>
     <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) -->
     <script src="{{ asset('assets/Aero/bundles/vendorscripts.bundle.js') }}"></script>
+
+    <!-- Light Gallery Plugin Js -->
+    <script src="{{ asset('assets/Aero/plugins/light-gallery/js/lightgallery-all.min.js') }}"></script>
+    <script src="{{ asset('assets/Aero/bundles/fullcalendarscripts.bundle.js') }}"></script>
+
+    <!--/ calender javascripts -->
+    <script src="{{ asset('assets/Aero/js/pages/medias/image-gallery.js') }}"></script>
+    <script src="{{ asset('assets/Aero/js/pages/calendar/calendar.js') }}"></script>
+
     <!-- slimscroll, waves Scripts Plugin Js -->
 
     <script src="{{ asset('assets/Aero/bundles/jvectormap.bundle.js') }}"></script> <!-- JVectorMap Plugin Js -->

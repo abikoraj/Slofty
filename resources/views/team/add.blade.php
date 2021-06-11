@@ -20,7 +20,8 @@
                     <div class="col-lg-7 col-md-6 col-sm-12">
                         <h2>Teams</h2>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Dashboard</a>
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="zmdi zmdi-home"></i>
+                                    Dashboard</a>
                             </li>
                             <li class="breadcrumb-item active">Teams</li>
                         </ul>

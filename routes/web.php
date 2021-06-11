@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CounterController;
+use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
@@ -58,6 +61,27 @@ Route::prefix('admin')->group(function () {
         Route::post('/submit', [TestimonialController::class, 'submit'])->name('testimonials.submit');
         Route::match(['get', 'post'], '/edit/{testimonial}', [TestimonialController::class, 'edit'])->name('testimonials.edit');
         Route::get('/delete/{testimonial}', [TestimonialController::class, 'delete'])->name('testimonials.delete');
+    });
+
+    Route::prefix('portfolio')->group(function () {
+        Route::get('/', [PortfolioController::class, 'add'])->name('portfolio.add');
+        Route::prefix('tags')->group(function () {
+            Route::post('/submit', [PortfolioController::class, 'tagSubmit'])->name('portfolio.tag.submit');
+            Route::get('/delete/{tag}', [PortfolioController::class, 'tagDelete'])->name('portfolio.tag.delete');
+        });
+        Route::post('/submit', [PortfolioController::class, 'submit'])->name('portfolio.submit');
+        Route::get('/delete/{portfolio}', [PortfolioController::class, 'delete'])->name('portfolio.delete');
+    });
+
+    Route::prefix('profile')->group(function () {
+        Route::get('/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::post('/update/{profile}', [ProfileController::class, 'update'])->name('profile.update');
+    });
+    Route::prefix('blog')->group(function () {
+        Route::get('/', [BlogController::class, 'add'])->name('blog.add');
+        Route::post('/submit', [BlogController::class, 'submit'])->name('blog.submit');
+        Route::match(['get', 'post'], '/edit/{blog}', [BlogController::class, 'edit'])->name('blog.edit');
+        Route::get('/delete/{blog}', [BlogController::class, 'delete'])->name('blog.delete');
     });
 });
 // });
