@@ -17,116 +17,33 @@
                 All
                 <div class="cbp-filter-counter"></div>
             </div>
-            <div data-filter=".branding" class="cbp-filter-item open_sans button bg_before_pink">
-                Branding
+            @foreach (App\Models\Tag::all() as $tags)
+
+            <div data-filter=".{{ $tags->name }}" class="cbp-filter-item open_sans button bg_before_pink">
+                {{ $tags->name }}
 
                 <div class="cbp-filter-counter"></div>
             </div>
-            <div data-filter=".web-design" class="cbp-filter-item open_sans button bg_before_pink">
-                Web Design
-                <div class="cbp-filter-counter"></div>
-            </div>
-            <div data-filter=".photography" class="cbp-filter-item open_sans button bg_before_pink">
-                Digital Marketing
-                <div class="cbp-filter-counter"></div>
-            </div>
+            @endforeach
         </div>
         <div id="js-grid-mosaic-flat" class="cbp cbp-l-grid-mosaic-flat">
-            <div class="cbp-item web-design photography">
-                <a href="{{ asset('assets/agency-studio/img/projects-1.jpg') }}" class="cbp-caption cbp-lightbox"
-                    data-title="Bolt UI<br>by Tiberiu Neamu">
+            @foreach (App\Models\Portfolio::all() as $galary)
+            <div class="cbp-item {{ $galary->tags['name'] }} photography">
+                <a href="{{ asset($galary->image) }}" class="cbp-caption cbp-lightbox"
+                    data-title="{{ $galary->caption }}<br>by {{ App\Models\Profile::first()->name }}">
                     <div class="cbp-caption-defaultWrap">
-                        <img src="{{ asset('assets/agency-studio/img/projects-1.jpg') }}" alt="">
+                        <img src="{{ asset($galary->image) }}" alt="">
                     </div>
                     <div class="cbp-caption-activeWrap">
                         <div class="cbp-l-caption-alignCenter">
                             <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title">Bolt UI</div>
+                                <div class="cbp-l-caption-title">{{ $galary->caption }}</div>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-
-            <div class="cbp-item branding photography">
-                <a href="{{ asset('assets/agency-studio/img/projects-2.jpg') }}" class="cbp-caption cbp-lightbox"
-                    data-title="World Clock<br>by Paul Flavius Nechita">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="{{ asset('assets/agency-studio/img/projects-2.jpg') }}" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignCenter">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title">World Clock</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="cbp-item branding photography">
-                <a href="{{ asset('assets/agency-studio/img/projects-3.jpg') }}" class="cbp-caption cbp-lightbox"
-                    data-title="WhereTO App<br>by Tiberiu Neamu">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="{{ asset('assets/agency-studio/img/projects-3.jpg') }}" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignCenter">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title">WhereTO App</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="cbp-item branding graphic">
-                <a href="{{ asset('assets/agency-studio/img/projects-4.jpg') }}" class="cbp-caption cbp-lightbox"
-                    data-title="Digital Menu<br>by Cosmin Capitanu">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="{{ asset('assets/agency-studio/img/projects-4.jpg') }}" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignCenter">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title">Digital Menu</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="cbp-item web-design branding">
-                <a href="{{ asset('assets/agency-studio/img/projects-6.jpg') }}" class="cbp-caption cbp-lightbox"
-                    data-title="iDevices<br>by Tiberiu Neamu">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="{{ asset('assets/agency-studio/img/projects-6.jpg') }}" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignCenter">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title">iDevices</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="cbp-item photography">
-                <a href="{{ asset('assets/agency-studio/img/projects-5.jpg') }}" class="cbp-caption cbp-lightbox"
-                    data-title="Seemple* Music<br>by Tiberiu Neamu">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="{{ asset('assets/agency-studio/img/projects-5.jpg') }}" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap">
-                        <div class="cbp-l-caption-alignCenter">
-                            <div class="cbp-l-caption-body">
-                                <div class="cbp-l-caption-title">Seemple* Music</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

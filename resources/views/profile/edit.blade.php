@@ -120,16 +120,15 @@
                                                         <span class="input-group-text"><i
                                                                 class="zmdi zmdi-globe-alt"></i></span>
                                                     </div>
-                                                    <input type="text" name="website" class="form-control"
-                                                        value="{{ $item->website }}" placeholder="Ex: www.website.com"
-                                                        required>
+                                                    <input type="url" name="website" class="form-control"
+                                                        value="{{ $item->website }}" placeholder="Ex: www.website.com">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-12 mb-3">
                                             <label for="subtitle">Google Map Link</label>
-                                            <textarea class="form-control no-resize" name="message" rows="4"
-                                                placeholder="Embed Google Map Here"></textarea>
+                                            <textarea class="form-control no-resize" name="map" rows="4"
+                                                placeholder="Embed Google Map Here">{{ $item->map }}</textarea>
                                         </div>
                                         <div class="row col-md-12 pr-0">
                                             <div class="col-lg-4 col-md-4">

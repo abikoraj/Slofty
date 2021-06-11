@@ -27,8 +27,8 @@ class SkillSeeder extends Seeder
             'progress3' => '92',
             'skill4' => 'ARTIFICIAL INTELLIGENCE',
             'progress4' => '95',
-            'skill5' => ' ',
-            'progress5' => ' '
+            'skill5' => '',
+            'progress5' => ''
         ]);
     }
 }

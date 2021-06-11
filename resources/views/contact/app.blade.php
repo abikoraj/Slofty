@@ -14,6 +14,10 @@
             </div>
         </div>
 
+        @php
+            $profiles=App\Models\Profile::first();
+        @endphp
+
         <div class="row">
             <div class="col-md-4 d-flex flex-column justify-content-start align-item-center contact_address heading_space wow fadeInLeft"
                 data-wow-delay="400ms">
@@ -23,7 +27,7 @@
                     </div>
                     <div class="d-table-cell cells">
                         <h4 class="color-black m-0">Visit Us</h4>
-                        <p>Salugara, SILIGURI.</p>
+                        <p>{{ $profiles->address }}</p>
                     </div>
                 </div>
                 <div class="contact-table my-3">
@@ -32,23 +36,38 @@
                     </div>
                     <div class="d-table-cell cells">
                         <h4 class="color-black m-0">Email Us</h4>
-                        <p><a href="mailto:contact@slofty.tech" class="para-color">contact@slofty.tech</a> </p>
+                        <p><a href="mailto:{{ $profiles->email }}" class="para-color">{{ $profiles->email }}</a> </p>
                     </div>
                 </div>
+                @if ($profiles->website)
                 <div class="contact-table my-3">
                     <div class="d-table-cell cells">
                         <span class="icon-cell"><i class="fas fa-globe-americas"></i></span>
                     </div>
                     <div class="d-table-cell cells">
                         <h4 class="color-black m-0">Our Website</h4>
-                        <p><a href="https://slofty.tech/" class="para-color">slofty.tech</a>
+                        <p><a href="{{ $profiles->website }}" class="para-color">{{  $profiles->website }}</a>
                         </p>
                     </div>
                 </div>
+                @endif
+                @if ($profiles->support)
+                <div class="contact-table my-3">
+                    <div class="d-table-cell cells">
+                        <span class="icon-cell"><i class="fas fa-globe"></i></span>
+                    </div>
+                    <div class="d-table-cell cells">
+                        <h4 class="color-black m-0">Support</h4>
+                        <p><a href="{{ $profiles->support }}" class="para-color">{{  $profiles->support }}</a>
+                        </p>
+                    </div>
+                </div>
+                @endif
             </div>
             <div class="col-md-8 heading_space wow fadeInRight" data-wow-delay="450ms">
                 <!-- id contact-form-->
                 <form class="findus contact-form" id="contact-form-data" action="mailto:sloftytechnologies@gmail.com">
+                    @csrf
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
                             <div id="result"></div>
@@ -89,9 +108,10 @@
         <div class="row">
             <div class="col-md-12 wow fadeInUp" data-wow-delay="350ms">
                 <div id="map-container">
-                    <iframe
+                    {!! $profiles->map !!}
+                    {{-- <iframe
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14249.499255975717!2d88.4458226!3d26.7643198!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd6a687d8f5de6b8e!2sSlofty%20Technologies%20Pvt%20Ltd!5e0!3m2!1sen!2snp!4v1621785259789!5m2!1sen!2snp"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> --}}
                 </div>
             </div>
         </div>

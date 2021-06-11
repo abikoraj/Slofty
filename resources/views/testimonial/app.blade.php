@@ -18,57 +18,19 @@
 
                 <div class="swiper-wrapper">
 
+                    @foreach (App\Models\Testimonial::all() as $testimony)
                     <div class="swiper-slide">
 
                         <p class="customer_feedback_text white_color open_sans default_text font_200">
-
-
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nisi enim, vulputate
-                            at justo tristique, tempor sagittis dolor. Cum sociis natoque penatibus et magnis
-                            dis parturient montes, nascetur ridiculus mus. Donec sit amet ligula consequat urna
-                            posuere
-                            convallis.
-
+                            {{ $testimony->message }}
                         </p>
 
                         <p class="customer_feedback_name white_color open_sans default_small_heading font_600">
-                            John Doe - Google CEO</p>
-
-                    </div>
-
-                    <div class="swiper-slide">
-
-                        <p class="customer_feedback_text white_color open_sans default_text font_200">
-
-
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nisi enim, vulputate
-                            at justo tristique, tempor sagittis dolor. Cum sociis natoque penatibus et magnis
-                            dis parturient montes, nascetur ridiculus mus. Donec sit amet ligula consequat urna
-                            posuere
-                            convallis.
-
+                            {{ $testimony->name }} - {{ $testimony->designation }}
                         </p>
 
-                        <p class="customer_feedback_name white_color open_sans default_small_heading font_600">
-                            John Doe - Google CEO</p>
-
                     </div>
-
-                    <div class="swiper-slide">
-                        <p class="customer_feedback_text white_color open_sans default_text font_200">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nisi enim, vulputate
-                            at justo tristique, tempor sagittis dolor. Cum sociis natoque penatibus et magnis
-                            dis parturient montes, nascetur ridiculus mus. Donec sit amet ligula consequat urna
-                            posuere
-                            convallis.
-
-                        </p>
-
-                        <p class="customer_feedback_name white_color open_sans default_small_heading font_600">
-                            John Doe - Google CEO</p>
-
-                    </div>
-
+                    @endforeach
                 </div>
 
 
