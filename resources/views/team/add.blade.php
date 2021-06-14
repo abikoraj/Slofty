@@ -73,21 +73,21 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="zmdi zmdi-facebook"></i></span>
                                             </div>
-                                            <input type="text" class="form-control" name="facebook"
+                                            <input type="url" class="form-control" name="facebook"
                                                 placeholder="https://www.facebook.com/abc">
                                         </div>
                                         <div class="input-group masked-input mb-3 col-md-12">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="zmdi zmdi-twitter"></i></span>
                                             </div>
-                                            <input type="text" class="form-control" name="twitter"
+                                            <input type="url" class="form-control" name="twitter"
                                                 placeholder="https://twitter.com/abc">
                                         </div>
                                         <div class="input-group masked-input mb-3 col-md-12">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="zmdi zmdi-linkedin"></i></span>
                                             </div>
-                                            <input type="text" class="form-control" name="linkedin"
+                                            <input type="url" class="form-control" name="linkedin"
                                                 placeholder="https://www.linkedin.com/abc">
                                         </div>
                                         <div class="col-md-12">

@@ -32,13 +32,7 @@
                     </div>
                     @endforeach
                 </div>
-
-
-
                 <div class="swiper-pagination"></div>
-
-
-
                 <div class="swiper-button-next fa fa-angle-right hidden-sm hidden-xs"></div>
 
                 <div class="swiper-button-prev fa fa-angle-left hidden-sm hidden-xs"></div>

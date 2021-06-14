@@ -15,7 +15,7 @@ class AboutSeeder extends Seeder
     public function run()
     {
         About::create([
-            'heading' => 'Our Awsome Services',
+            'heading' => 'Services',
             'subHeading' => 'What we do',
             'title1' => 'Branding',
             'description1' => 'We create the trusted and joyful brands. We believe in creating magical together with effective positive growth for your products and business.',
